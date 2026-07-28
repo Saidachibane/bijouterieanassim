@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collection | Bijouterie Anassim</title>
+<meta name="description" content="Découvrez toute la collection de bijoux en or 18 carats de Bijouterie Anassim : bagues, colliers, bracelets, boucles, sets, bijoux de mariage et lingots.">
+<meta name="keywords" content="Bijouterie Maroc, Bijoux en Or Maroc, Bijouterie Casablanca, Bagues en Or, Colliers en Or, Bracelets en Or, Bijoux Mariage Maroc">
+<meta property="og:title" content="Collection | Bijouterie Anassim">
+<meta property="og:description" content="Découvrez toute la collection de bijoux en or 18 carats de Bijouterie Anassim : bagues, colliers, bracelets, boucles, sets, bijoux de mariage et lingots.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">Anassim<span>.</span></div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- NOTIFICATION -->
+<div class="notification" id="notif">
+  <strong id="notif-title">Notification</strong>
+  <span id="notif-msg"></span>
+</div>
+
+<!-- FLOATING WHATSAPP -->
+<a id="float-wa" href="https://wa.me/212680990335?text=Bonjour%20Bijouterie%20Anassim%2C%20je%20souhaite%20avoir%20des%20informations%20sur%20vos%20bijoux." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html">Anassim<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Accueil</a></li>
+      <li><a href="collection.html" class="nav-link active">Collection</a></li>
+      <li><a href="about.html" class="nav-link">À Propos</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="nav-icon-btn rel-nav-icon" href="wishlist.html" aria-label="Wishlist">
+        ♡<span class="notif-badge" id="wish-count" style="display:none">0</span>
+      </a>
+      <button class="nav-icon-btn" onclick="openAdmin()" aria-label="Admin" title="Admin Panel">⚙</button>
+      <a class="nav-whatsapp-btn" href="https://wa.me/212680990335" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMobile()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<!-- MOBILE MENU -->
+<div id="mobile-menu">
+  <a href="index.html">Accueil</a>
+  <a href="collection.html">Collection</a>
+  <a href="about.html">À Propos</a>
+  <a href="contact.html">Contact</a>
+  <a href="https://wa.me/212680990335" target="_blank" style="color:var(--whatsapp)">WhatsApp</a>
+</div>
+
+<!-- ======== COLLECTION PAGE ======== -->
+  <div class="page-hero">
+    <div class="container">
+      <span class="tag">Notre Collection</span>
+      <h1>Bijoux <em style="font-style:italic;color:var(--gold)">en Or</em></h1>
+      <p>Explorez notre sélection exclusive de bijoux en or 18 carats, pour chaque occasion</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="filter-bar" id="filter-bar">
+      <button class="filter-btn active" data-cat="all" onclick="filterProducts('all',this)">Tous</button>
+      <button class="filter-btn" data-cat="Bagues" onclick="filterProducts('Bagues',this)">Bagues</button>
+      <button class="filter-btn" data-cat="Colliers" onclick="filterProducts('Colliers',this)">Colliers</button>
+      <button class="filter-btn" data-cat="Bracelets" onclick="filterProducts('Bracelets',this)">Bracelets</button>
+      <button class="filter-btn" data-cat="Boucles" onclick="filterProducts('Boucles',this)">Boucles d'Oreilles</button>
+      <button class="filter-btn" data-cat="Sets" onclick="filterProducts('Sets',this)">Sets</button>
+      <button class="filter-btn" data-cat="Mariage" onclick="filterProducts('Mariage',this)">Bijoux Mariage</button>
+      <button class="filter-btn" data-cat="Lingots" onclick="filterProducts('Lingots',this)">Lingots d'Or</button>
+      <div class="search-wrap">
+        <input type="text" id="search-input" placeholder="Rechercher..." oninput="searchProducts(this.value)">
+        <span class="search-icon">⌕</span>
+      </div>
+    </div>
+    <div class="products-grid" id="products-grid"></div>
+    <div class="pagination" id="pagination"></div>
+  </div>
+  <div class="gold-line container"></div>
+
+<!-- ======== PRODUCT DETAIL MODAL ======== -->
+<!-- ======== PRODUCT DETAIL MODAL ======== -->
+<div id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-box" id="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-gallery">
+      <img id="modal-img" src="" alt="">
+    </div>
+    <div class="modal-info">
+      <div class="avail-badge" id="modal-avail-badge"><div class="avail-dot" id="modal-avail-dot"></div><span id="modal-avail-text">En Stock</span></div>
+      <div class="modal-cat" id="modal-cat"></div>
+      <div class="modal-name" id="modal-name"></div>
+      <div class="modal-price" id="modal-price"></div>
+      <div class="modal-desc" id="modal-desc"></div>
+      <div class="modal-specs">
+        <div class="modal-spec">
+          <div class="modal-spec-label">Poids</div>
+          <div class="modal-spec-val" id="modal-weight"></div>
+        </div>
+        <div class="modal-spec">
+          <div class="modal-spec-label">Type d'Or</div>
+          <div class="modal-spec-val" id="modal-gold"></div>
+        </div>
+        <div class="modal-spec">
+          <div class="modal-spec-label">Catégorie</div>
+          <div class="modal-spec-val" id="modal-cat2"></div>
+        </div>
+        <div class="modal-spec">
+          <div class="modal-spec-label">Référence</div>
+          <div class="modal-spec-val" id="modal-ref"></div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <a class="btn btn-whatsapp" id="modal-wa-btn" href="#" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Commander
+        </a>
+        <button class="btn btn-outline" id="modal-wish-btn" onclick="wishFromModal()">♡ Wishlist</button>
+        <button class="btn btn-dark" onclick="closeModal()">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======== ADMIN OVERLAY ======== -->
+<!-- ======== ADMIN OVERLAY ======== -->
+<div class="admin-overlay" id="admin-overlay">
+  <!-- LOGIN -->
+  <div class="admin-login" id="admin-login">
+    <div class="admin-login-box">
+      <div class="admin-login-logo">Anassim</div>
+      <div class="admin-login-sub">Panneau d'Administration</div>
+      <div class="form-group">
+        <label>Nom d'Utilisateur</label>
+        <input type="text" id="admin-user" placeholder="Nom d'utilisateur">
+      </div>
+      <div class="form-group">
+        <label>Mot de Passe</label>
+        <input type="password" id="admin-pass" placeholder="••••••••" onkeypress="if(event.key==='Enter')adminLogin()">
+      </div>
+      <button class="btn btn-gold" style="width:100%;justify-content:center;margin-top:8px" onclick="adminLogin()">Se Connecter →</button>
+      <button class="btn btn-dark" style="width:100%;justify-content:center;margin-top:12px" onclick="closeAdmin()">Annuler</button>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="admin-panel" id="admin-panel" style="display:none">
+    <div class="admin-sidebar">
+      <div class="admin-logo">
+        <div class="admin-logo-text">Anassim</div>
+        <div class="admin-logo-sub">Admin Panel</div>
+      </div>
+      <div class="admin-nav-item active" onclick="adminTab('dashboard',this)"><span>⊞</span> Tableau de Bord</div>
+      <div class="admin-nav-item" onclick="adminTab('products-list',this)"><span>💎</span> Produits</div>
+      <div class="admin-nav-item" onclick="adminTab('add-product',this)"><span>+</span> Ajouter Produit</div>
+      <div class="admin-nav-item" onclick="adminTab('categories',this)"><span>⊕</span> Catégories</div>
+      <div class="admin-nav-item" style="margin-top:auto" onclick="closeAdmin()"><span>🔙</span> Retour au site web</div>
+      <div class="admin-logout" onclick="adminLogout()"><span>↩</span> Déconnexion</div>
+    </div>
+    <div class="admin-content">
+      <!-- DASHBOARD TAB -->
+      <div class="admin-tab active" id="tab-dashboard">
+        <div class="admin-header">
+          <h2>Tableau de Bord</h2>
+          <button class="btn btn-gold" onclick="adminTab('add-product',document.querySelector('.admin-nav-item:nth-child(4)'))">+ Nouveau Produit</button>
+        </div>
+        <div class="admin-stats" id="admin-stats"></div>
+        <h3 style="font-size:18px;margin-bottom:20px;color:var(--ivory)">Produits Récents</h3>
+        <table class="admin-table" id="admin-recent"></table>
+      </div>
+      <!-- PRODUCTS LIST TAB -->
+      <div class="admin-tab" id="tab-products-list">
+        <div class="admin-header">
+          <h2>Gestion Produits</h2>
+          <button class="btn btn-gold" onclick="adminTab('add-product',document.querySelector('.admin-nav-item:nth-child(4)'))">+ Nouveau Produit</button>
+        </div>
+        <table class="admin-table" id="admin-all-products"></table>
+      </div>
+      <!-- ADD PRODUCT TAB -->
+      <div class="admin-tab" id="tab-add-product">
+        <div class="admin-form">
+          <h3 id="form-title">Ajouter un Produit</h3>
+          <input type="hidden" id="edit-id">
+          <div class="product-form-grid">
+            <div class="form-group">
+              <label>Nom du Produit</label>
+              <input type="text" id="f-name" placeholder="Ex: Bague Solitaire Diamant">
+            </div>
+            <div class="form-group">
+              <label>Catégorie</label>
+              <select id="f-cat">
+                <option>Bagues</option><option>Colliers</option><option>Bracelets</option>
+                <option>Boucles</option><option>Sets</option><option>Mariage</option><option>Lingots</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Poids (grammes)</label>
+              <input type="text" id="f-weight" placeholder="Ex: 5.2g">
+            </div>
+            <div class="form-group">
+              <label>Type d'Or</label>
+              <select id="f-gold">
+                <option>Or Jaune 18K</option><option>Or Rose 18K</option><option>Or Blanc 18K</option>
+                <option>Or Jaune 21K</option><option>Or 24K</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Prix (MAD)</label>
+              <input type="text" id="f-price" placeholder="Ex: 2500 MAD">
+            </div>
+            <div class="form-group">
+              <label>Badge</label>
+              <select id="f-badge">
+                <option value="">Aucun</option>
+                <option>Nouveau</option><option>Bestseller</option><option>Populaire</option>
+                <option>Édition Limitée</option><option>Promo</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea id="f-desc" placeholder="Description détaillée du bijou..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>URL de l'Image</label>
+            <input type="file" id="f-img" accept="image/*" onchange="handleImageUpload(event)">
+          </div>
+          <div class="form-group">
+            <label style="display:flex;align-items:center;gap:12px;cursor:pointer">
+              <input type="checkbox" id="f-featured" style="width:auto">
+              Produit en vedette (homepage)
+            </label>
+          </div>
+          <div class="form-group">
+            <label style="display:flex;align-items:center;gap:12px;cursor:pointer">
+              <input type="checkbox" id="f-avail" style="width:auto" checked>
+              Disponible
+            </label>
+          </div>
+          <div style="display:flex;gap:12px">
+            <button class="btn btn-gold" onclick="saveProduct()">Enregistrer le Produit</button>
+            <button class="btn btn-dark" onclick="resetForm()">Réinitialiser</button>
+          </div>
+        </div>
+      </div>
+      <!-- CATEGORIES TAB -->
+      <div class="admin-tab" id="tab-categories">
+        <div class="admin-header"><h2>Catégories</h2></div>
+        <div id="cat-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-logo">Anassim.</div>
+        <div class="footer-brand-desc">Bijouterie de prestige à Casablanca depuis 1998. Spécialiste en bijoux en or 18 carats, bagues, colliers, bracelets et bijoux de mariage.</div>
+        <div class="footer-social">
+          <a class="footer-social-btn" href="https://instagram.com/bijoutrie.anassim" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+          <a class="footer-social-btn" href="https://wa.me/212680990335" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+          <a class="footer-social-btn" href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">👤</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="collection.html">Collection</a></li>
+          <li><a href="about.html">À Propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Catégories</h4>
+        <ul>
+          <li><a href="collection.html?cat=Bagues">Bagues</a></li>
+          <li><a href="collection.html?cat=Colliers">Colliers</a></li>
+          <li><a href="collection.html?cat=Bracelets">Bracelets</a></li>
+          <li><a href="collection.html?cat=Boucles">Boucles d'Oreilles</a></li>
+          <li><a href="collection.html?cat=Mariage">Bijoux Mariage</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>Recevez nos nouvelles collections et offres exclusives en avant-première.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Votre email">
+          <button onclick="subscribeNewsletter()">OK</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Bijouterie Anassim. Tous droits réservés. | Casablanca, Maroc</p>
+      <p>Designed with ❤️ pour <a href="#">Bijouterie Anassim</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
